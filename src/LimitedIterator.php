@@ -32,7 +32,7 @@ class LimitedIterator implements Iterator
      *
      * @since 5.0.0
      */
-    public function current()
+    public function current(): mixed
     {
         return $this->iterations;
     }
@@ -46,7 +46,7 @@ class LimitedIterator implements Iterator
      *
      * @since 5.0.0
      */
-    public function next()
+    public function next(): void
     {
         $this->iterations++;
         if ($this->iterations > $this->iterationLimit) {
@@ -65,7 +65,7 @@ class LimitedIterator implements Iterator
      *
      * @since 5.0.0
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->iterations;
     }
@@ -80,7 +80,7 @@ class LimitedIterator implements Iterator
      *
      * @since 5.0.0
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->iterations <= $this->iterationLimit;
     }
@@ -94,7 +94,7 @@ class LimitedIterator implements Iterator
      *
      * @since 5.0.0
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->iterations = 0;
     }
