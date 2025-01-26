@@ -48,7 +48,7 @@ class Interval extends CarbonInterval
      */
     public function inSeconds(): int
     {
-        return (new Carbon())->add($this)->diffInRealSeconds(new Carbon());
+        return round((new Carbon())->add($this)->diffInRealSeconds(new Carbon(), true));
     }
 
     /**
@@ -100,7 +100,7 @@ class Interval extends CarbonInterval
 		DateInterval $interval,
 		array $skip = [],
 		bool $skipCopy = false
-    ) {
+    ): static {
         return self::seconds(
             self::intervalToSeconds($interval, true)
         );
@@ -121,8 +121,9 @@ class Interval extends CarbonInterval
             version_compare(PHP_VERSION, '7.1.0-dev', '<') ? 0 :
                 $dateInterval->f;
 
-        return (new Carbon())->add($dateInterval)->diffInRealSeconds(
-            new Carbon()
-        );
+        return round((new Carbon())->add($dateInterval)->diffInRealSeconds(
+            new Carbon(),
+			true
+        ));
     }
 }
