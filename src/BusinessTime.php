@@ -477,7 +477,7 @@ class BusinessTime extends Carbon
      *
      * @return BusinessTime
      */
-    public function roundToPrecision(DateInterval $precision = null): self
+    public function roundToPrecision(?DateInterval $precision = null): self
     {
         $precisionSeconds = Interval::instance($precision ?: $this->precision())
                                     ->inSeconds();
