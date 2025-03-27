@@ -347,7 +347,7 @@ class BusinessTime extends Carbon
      * @return float
      */
     public function diffInPartialBusinessHours(
-        DateTimeInterface $time = null,
+        ?DateTimeInterface $time = null,
         bool $absolute = true
     ): float {
         return $this->diffInBusinessTime($time, $absolute)
