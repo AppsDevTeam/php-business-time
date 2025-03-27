@@ -579,7 +579,7 @@ ERR
      * @return BusinessTime
      */
     public function determineLengthOfBusinessDay(
-        DateTime $typicalDay = null
+        ?DateTime $typicalDay = null
     ): self {
         if ($typicalDay === null) {
             // Default to the length of a reasonable guess at a typical day.
