@@ -721,7 +721,7 @@ ERR
      * @return int
      */
     private function diffInBusinessTime(
-        DateTimeInterface $time = null,
+        ?DateTimeInterface $time = null,
         bool $absolute = true
     ): int {
         // We're taking a basic approach with some variables and a loop here as
