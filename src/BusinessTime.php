@@ -510,7 +510,7 @@ class BusinessTime extends Carbon
      *
      * @return BusinessTime
      */
-    public function ceilToPrecision(DateInterval $precision = null): self
+    public function ceilToPrecision(?DateInterval $precision = null): self
     {
         $seconds = Interval::instance($precision ?: $this->precision())
                            ->inSeconds();
