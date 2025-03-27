@@ -367,7 +367,7 @@ class BusinessTime extends Carbon
      * @return Interval
      */
     public function diffBusiness(
-        DateTimeInterface $time = null,
+        ?DateTimeInterface $time = null,
         bool $absolute = true
     ): Interval {
         $diffInBusinessTime = $this->diffInBusinessTime($time, $absolute);
