@@ -293,7 +293,7 @@ class BusinessTime extends Carbon
      * @return int
      */
     public function diffInBusinessDays(
-        DateTimeInterface $time = null,
+        ?DateTimeInterface $time = null,
         bool $absolute = true
     ): int {
         return (int) $this->diffInPartialBusinessDays($time, $absolute);
