@@ -48,7 +48,7 @@ class Interval extends CarbonInterval
      */
     public function inSeconds(): int
     {
-        return round((new Carbon())->add($this)->diffInRealSeconds(new Carbon(), true));
+        return round((new Carbon())->add($this)->diffInUTCSeconds(new Carbon(), true));
     }
 
     /**
@@ -121,7 +121,7 @@ class Interval extends CarbonInterval
             version_compare(PHP_VERSION, '7.1.0-dev', '<') ? 0 :
                 $dateInterval->f;
 
-        return round((new Carbon())->add($dateInterval)->diffInRealSeconds(
+        return round((new Carbon())->add($dateInterval)->diffInUTCSeconds(
             new Carbon(),
 			true
         ));
